@@ -8,17 +8,7 @@ import pandas as pd
 import sys
 
 def main():
-    df = pd.read_csv("data.csv")
-    df.drop_duplicates()
-    y = df.id_move
-
-    df = df.drop("id_move", axis=1)
-
-    x = df
-
-    clf = MLPClassifier().fit(x, y)
-
-    dump(clf, "mlpc.model")
+    clf = load("mlpc.model")
 
     pg.init()
 
